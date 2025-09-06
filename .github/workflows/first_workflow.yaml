@@ -1,5 +1,9 @@
 name: my first workflow
-on: [push]
+on: 
+  push:
+   branches:
+         - main
+         - vinod
  
 
 jobs:
