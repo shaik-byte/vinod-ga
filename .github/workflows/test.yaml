@@ -16,5 +16,5 @@ jobs:
 
       - name: Use Secrets
         run: |
-          echo "API_KEY is ${{ secrets.PASSWORD }}"
+          echo "API_KEY is ${{ secrets.NAME }}"
           
