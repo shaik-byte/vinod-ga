@@ -27,6 +27,8 @@ jobs:
               ENV_NAME: Development
               VERSION: "1.2.2"
             run: echo "The deployment is in $ENV_NAME and version is $VERSION"
+          - name: printing the secret variable data
+            run: echo "The secret password is $PASSWORD"
             
   # second_job:
   #       runs-on: ubuntu-latest
