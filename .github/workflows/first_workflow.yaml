@@ -21,7 +21,7 @@ jobs:
           - name: printing name and age
             run: echo "My name is $NAME and age is $AGE"
           - name: printing name and age
-            run: echo "My name is $NAME_2 and age is $ AGE_2"
+            run: echo "My name is $NAME_2 and age is $AGE_2"
             
   # second_job:
   #       runs-on: ubuntu-latest
