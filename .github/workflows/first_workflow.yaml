@@ -4,19 +4,24 @@ on:
    branches:
          - '*'
 env:
-  NAME: Vinod
+  NAME: Vinod  #workflow level variables
   AGE: "34"
 
 jobs:
   first_job:
       runs-on: ubuntu-latest
+      env:
+        NAME_2: Shaik  #Job level variables
+        AGE_2: "29"
       steps:
-          - name: prnitng shell script
-            run: echo "Hi I am Vinod"
-          - name: printing second shell script
-            run: whoami
+          # - name: prnitng shell script
+          #   run: echo "Hi I am Vinod"
+          # - name: printing second shell script
+          #   run: whoami
           - name: printing name and age
             run: echo "My name is $NAME and age is $AGE"
+          - name: printing name and age
+            run: echo "My name is $NAME_2 and age is $ AGE_2"
             
   # second_job:
   #       runs-on: ubuntu-latest
