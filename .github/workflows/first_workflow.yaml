@@ -9,7 +9,7 @@ jobs:
       runs-on: ubuntu-latest
       steps:
           - name: prnitng shell script
-            run: echo Hi I am Vinod"
+            run: echo "Hi I am Vinod"
           - name: printing second shell script
             run: whoami
             
@@ -18,13 +18,14 @@ jobs:
         needs: first_job
         steps:
             - name: prnitng shell script
-              run: echo "Hi I am Vinod"
+              run: echo Hi I am Vinod"
             - name: printing second shell script
               run: whoami
 
   third_job:
         runs-on: ubuntu-latest
         needs: second_job
+        if: always ()
         steps:
             - name: prnitng shell script
               run: echo "Hi I am Vinod"
