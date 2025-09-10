@@ -1,11 +1,12 @@
-name: Manual Trigger Example
+name: Using Variables
 
 on:
-  workflow_dispatch:   
+  workflow_dispatch:
 
 jobs:
-  run-manual:
+  show-vars:
     runs-on: ubuntu-latest
     steps:
-      - name: Print message
-        run: echo "This workflow was manually triggered!"
+      - name: Print variable
+        run: echo "Environment is ${{ vars.APP_ENV }}"
+
