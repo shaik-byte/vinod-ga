@@ -1,0 +1,17 @@
+name: Deploy ENvironment Secrets
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  CallingsecretsandVariablesfroenvironments:
+    runs-on: ubuntu-latest
+    environment: DEV   
+
+    steps:
+      - name: Use Secrets
+        run: |
+          echo "password  is ${{ secrets.PASSWORD }}"
+          echo "username  is ${{ variables.USERNAME }}"
