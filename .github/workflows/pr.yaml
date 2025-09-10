@@ -1,7 +1,8 @@
-name: Using Variables
-
-on:
-  workflow_dispatch:
+name: my first workflow
+on: 
+  push:
+   branches:
+         - '*'
 
 jobs:
   show-vars:
