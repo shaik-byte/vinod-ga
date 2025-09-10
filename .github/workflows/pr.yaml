@@ -1,16 +1,21 @@
-name: PR Checks
+name: Manual Deploy
 
 on:
-  pull_request:
-    types: [opened, synchronize, reopened]
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: "Environment to deploy to"
+        required: true
+        default: "staging"
+      version:
+        description: "App version (e.g., 1.0.0)"
+        required: false
 
 jobs:
-  test:
+  deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Code
-        uses: actions/checkout@v4
-
-      - name: Run Tests
+      - name: Show chosen inputs
         run: |
-          echo "Running tests for the PR #${{ github.event.number }}"
+          echo "Deploying to: ${{ github.event.inputs.environment }}"
+          echo "Version: ${{ github.event.inputs.version }}"
