@@ -14,4 +14,4 @@ jobs:
       - name: Use Secrets
         run: |
           echo "password  is ${{ secrets.PASSWORD }}"
-          echo "username  is ${{ variables.USERNAME }}"
+          echo "username  is ${{ vars.USERNAME }}"
