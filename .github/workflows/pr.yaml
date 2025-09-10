@@ -1,21 +1,11 @@
-name: Manual Deploy
+name: Manual Trigger Example
 
 on:
-  workflow_dispatch:
-    inputs:
-      environment:
-        description: "Environment to deploy to"
-        required: true
-        default: "staging"
-      version:
-        description: "App version (e.g., 1.0.0)"
-        required: false
+  workflow_dispatch:   
 
 jobs:
-  deploy:
+  run-manual:
     runs-on: ubuntu-latest
     steps:
-      - name: Show chosen inputs
-        run: |
-          echo "Deploying to: ${{ github.event.inputs.environment }}"
-          echo "Version: ${{ github.event.inputs.version }}"
+      - name: Print message
+        run: echo "This workflow was manually triggered!"
