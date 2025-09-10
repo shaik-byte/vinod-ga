@@ -13,7 +13,7 @@ jobs:
     steps:
       - name: Use Secrets
         run: |
-          echo "password  is ${{ secrets.PASSWORD }}"
+          echo "password  is  ${{ secrets.PASSWORD }}"
           echo "username  is ${{ vars.USERNAME }}"
 
   CallingsecretsandVariablesforsecondjob:
