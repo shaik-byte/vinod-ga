@@ -12,4 +12,4 @@ jobs:
 
       - name: Run Tests
         run: |
-          echo "Running tests for the PR #${{ github.event.number }}"
+          echo "Running tests for the PR and testing the commit #${{ github.event.number }}"
