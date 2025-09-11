@@ -1,0 +1,19 @@
+name: Conditional Workflow
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "src/**"   
+      - "src/*.py"
+
+jobs:
+  run-only-on-change:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Run Script
+        run: echo "Changes detected in app/, infra/, root README.md, or src/ folder"
