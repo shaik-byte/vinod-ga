@@ -11,7 +11,25 @@
 
 
 
-name: With Example - Checkout
+# name: With Example - Checkout
+
+# on: [push]
+
+# jobs:
+#   example:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Checkout a specific branch
+#         uses: actions/checkout@v4   #reusable workflow
+#         with:       #input perameter
+#           ref: 'main'   
+#       - name: Setup Node.js
+#         uses: actions/setup-node@v4
+#         with:              #input perameter
+#           node-version: '18'
+
+
+name: Continue-on-error Example
 
 on: [push]
 
@@ -19,12 +37,9 @@ jobs:
   example:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout a specific branch
-        uses: actions/checkout@v4   #reusable workflow
-        with:       #input perameter
-          ref: 'main'   
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:              #input perameter
-          node-version: '18'
+      - name: This step may fail but won't stop workflow
+        run: exit 1  
+        continue-on-error: true
+      - name: Next step still runs
+        run: echo "Workflow continues even if previous failed"
 
