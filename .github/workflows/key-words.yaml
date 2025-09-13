@@ -67,7 +67,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Always runs
-        run: echo "This step runs always"
+        run: exit 1
 
       - name: Notify if failed
         if: failure()
