@@ -67,10 +67,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Always runs
-        run: exit 1
+        run: echo "This step runs always"
 
-      - name: Notify if failed
-        if: failure()
-        run: echo "job failed"
+      - name: Runs only on main branch
+        if: github.ref == 'refs/heads/main'
+        run: echo "This step runs only on main"
 
 
