@@ -1,0 +1,14 @@
+name: Conditional statement
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Always runs
+        run: echo "This step runs always"
+
+      - name: Runs only on main branch
+        if: github.ref == 'refs/heads/main'
+        run: echo "This step runs only on main"
