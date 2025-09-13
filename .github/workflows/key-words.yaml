@@ -45,15 +45,32 @@
 
 
 
-name: Timeout Example
+# name: Timeout Example
+
+# on: [push]
+
+# jobs:
+#   example:
+#     runs-on: ubuntu-latest
+#     timeout-minutes: 1   
+#     steps:
+#       - name: Long running script
+#         run: sleep 30  
+
+
+name: Conditional statement
 
 on: [push]
 
 jobs:
-  example:
+  build:
     runs-on: ubuntu-latest
-    timeout-minutes: 1   
     steps:
-      - name: Long running script
-        run: sleep 30  
+      - name: Always runs
+        run: echo "This step runs always"
+
+      - name: Notify if failed
+        if: failure()
+        run: echo "job failed"
+
 
