@@ -39,7 +39,7 @@ jobs:
     steps:
       - name: This step may fail but won't stop workflow
         run: exit 1  
-        continue-on-error: true
+        continue-on-error: false
       - name: Next step still runs
         run: echo "Workflow continues even if previous failed"
 
