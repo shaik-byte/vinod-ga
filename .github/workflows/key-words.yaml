@@ -29,17 +29,31 @@
 #           node-version: '18'
 
 
-name: Continue-on-error Example
+# name: Continue-on-error Example
+
+# on: [push]
+
+# jobs:
+#   example:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: This step may fail but won't stop workflow
+#         run: exit 1  
+#         continue-on-error: false
+#       - name: Next step still runs
+#         run: echo "Workflow continues even if previous failed"
+
+
+
+name: Timeout Example
 
 on: [push]
 
 jobs:
   example:
     runs-on: ubuntu-latest
+    timeout-minutes: 1   
     steps:
-      - name: This step may fail but won't stop workflow
-        run: exit 1  
-        continue-on-error: false
-      - name: Next step still runs
-        run: echo "Workflow continues even if previous failed"
+      - name: Long running script
+        run: sleep 30  
 
