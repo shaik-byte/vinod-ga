@@ -5,7 +5,7 @@ on:
     branches:
       - main
     paths:
-      # - "src/**"   
+      - "src/**"   
       # - "src/vinod.py"
       - "vinod.txt"
 
