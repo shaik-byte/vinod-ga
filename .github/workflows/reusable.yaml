@@ -8,3 +8,6 @@ jobs:
     steps:
       - name: Print static message
         run: echo "Hello from reusable workflow!"
+
+      - name: Printing this from reusable.yaml file
+        run: echo "Printing this from reusable.yaml file"
